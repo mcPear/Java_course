@@ -40,7 +40,7 @@ public class CurrencyExchangeController {
         catch(IllegalArgumentException e){
             throw new RuntimeException("Something went wrong");
         }
-    }//http://localhost:8080/multiplier/10/4/?from=PLN&to=USD //jak przekazać longa ?
+    }//http://localhost:8080/multiplier/10/4/?from=PLN&to=USD 
 
 
 
