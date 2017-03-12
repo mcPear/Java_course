@@ -1,5 +1,6 @@
-package com.example;
+package com.example.controller;
 
+import com.example.dto.CurrencyDTO;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +15,7 @@ import java.util.Currency;
 
 @RestController
 public class CurrencyExchangeController {
+    private CurrencyDTO currencyDTO = new CurrencyDTO();
 
     @RequestMapping("/{value}")
     public Long multiplyByTwo(@PathVariable Long value){ //jak dam 2 to Spring sobie zrzutuje na Longa sam
@@ -40,8 +42,12 @@ public class CurrencyExchangeController {
         catch(IllegalArgumentException e){
             throw new RuntimeException("Something went wrong");
         }
-    }//http://localhost:8080/multiplier/10/4/?from=PLN&to=USD 
+    }//http://localhost:8080/multiplier/10/4.3/?from=PLN&to=USD
 
+    @RequestMapping("/currencyDTO")
+    public CurrencyDTO getCurrencyDTO(){
+        return currencyDTO;
+    }
 
 
 }
