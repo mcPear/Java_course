@@ -2,7 +2,10 @@ package com.example.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -10,7 +13,8 @@ import java.math.BigDecimal;
  */
 @Data
 @NoArgsConstructor
-public class CurrencyDTO {
+@Component
+public class CurrencyDTO implements Serializable{
     private BigDecimal value;
     private String currency;
 
