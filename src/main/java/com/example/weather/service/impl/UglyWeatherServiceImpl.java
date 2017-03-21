@@ -1,8 +1,7 @@
-package com.example.service.impl;
+package com.example.weather.service.impl;
 
-import com.example.service.WeatherService;
+import com.example.weather.service.WeatherService;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 /**

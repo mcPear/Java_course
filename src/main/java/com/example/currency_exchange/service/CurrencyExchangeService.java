@@ -1,6 +1,6 @@
-package com.example.service;
+package com.example.currency_exchange.service;
 
-import com.example.dto.CurrencyDTO;
+import com.example.currency_exchange.dto.CurrencyDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,7 @@ import java.util.Currency;
  * Created by maciej on 15.03.17.
  */
 @Service
-public class CurrencyService {
+public class CurrencyExchangeService {
 
     @Autowired
     private CurrencyDTO currencyDTO;
