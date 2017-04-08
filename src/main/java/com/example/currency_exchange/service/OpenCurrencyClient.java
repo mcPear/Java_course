@@ -2,6 +2,7 @@ package com.example.currency_exchange.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.websocket.ClientEndpoint;
@@ -12,7 +13,7 @@ import java.util.Map;
 /**
  * Created by maciej on 16.03.17.
  */
-@Component
+@Service
 public class OpenCurrencyClient {
 
     String url = "http://api.fixer.io/latest?symbol=USD,GBP&base=PLN";

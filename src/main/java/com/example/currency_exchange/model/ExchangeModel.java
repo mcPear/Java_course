@@ -6,15 +6,9 @@ package com.example.currency_exchange.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-
 import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
-import java.util.Currency;
-import java.util.Date;
 import java.util.Map;
 
 
