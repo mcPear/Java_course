@@ -30,7 +30,7 @@ public class NewWeatherController {
     }
 
     @RequestMapping("/weather1")
-    WeatherParams getWeather(@Validated WeatherParams params){
+    public WeatherParams getWeather(@Validated WeatherParams params){
         params.setCurrent(false);
         return params;
     }//http://localhost:8080/api/weather1?city=London&country=England&current=true

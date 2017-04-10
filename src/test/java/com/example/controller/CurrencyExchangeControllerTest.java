@@ -34,8 +34,8 @@ public class CurrencyExchangeControllerTest {
 
     @Test
     public void shouldHandleExceptionWhenThrown(){
-        exceptionRule.expect(RuntimeException.class);
-        exceptionRule.expectMessage("Something went wrong");
+        exceptionRule.expect(RuntimeException.class); //sprytniejszy sposób na sprawdzenie wyjątku
+        exceptionRule.expectMessage("Something went wrong"); //a tu na sprawdzenie message wyjątku
 
         currencyExchangeController.currencyMultiplier1(20l,10d,"badCode","GBP");
     }
