@@ -42,7 +42,7 @@ public class NewWeatherControllerTest {
 
 
     @Test
-    public void shouldReturnWeather() {
+    public void shouldReturnWeatherParamsWhenWeatherParamsAreSupplied() {
         WeatherParams weatherParams = sut.getWeather(new WeatherParams());
         Assert.assertNotNull(weatherParams);
     }

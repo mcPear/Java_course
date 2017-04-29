@@ -4,6 +4,8 @@ import com.example.currency_exchange.dto.CurrencyDTO;
 import com.example.currency_exchange.entity.ExchangeRate;
 import com.example.currency_exchange.model.ExchangeModel;
 import com.example.currency_exchange.repository.ExchangeRateRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,8 @@ import java.util.Currency;
  */
 @Service
 public class CurrencyExchangeService {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private CurrencyDTO currencyDTO;
@@ -41,13 +45,14 @@ public class CurrencyExchangeService {
         }
     }
 
-    public ArrayList<ExchangeRate> getAllFromDB(){
-        ArrayList<ExchangeRate> returnList = new ArrayList<>();
-        System.out.println(exchangeRateRepository.findAll());
-        for(ExchangeRate e: exchangeRateRepository.findAll()) {
-            returnList.add(e);
-        }
-        return returnList;
+    public Iterable<ExchangeRate> getAllFromDB(){
+
+        //I'm not using logger.debug, because it's not working... I suppose I should
+        //It's late, I can't figure out how to enable it
+        Iterable<ExchangeRate> exchangeRates = exchangeRateRepository.findAll();
+        logger.info(exchangeRateRepository.findAll().toString());
+
+        return exchangeRates;
     }
 
 }

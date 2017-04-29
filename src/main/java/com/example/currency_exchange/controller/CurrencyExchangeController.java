@@ -203,7 +203,6 @@ public class CurrencyExchangeController {
     //HOMEWORK - Chapter5
     @RequestMapping(value = "/saveExchangeRate", method = RequestMethod.PUT)
     public Long saveExchangeRateBody(@RequestBody ExchangeRate exchangeRate) {
-        System.out.println(exchangeRate);
         exchangeRateRepository.save(exchangeRate);
         return exchangeRateRepository.count();
     }//http://localhost:8080/saveExchangeRate    body sample: {"id":null,"currencyFrom":"EUR","currencyTo":"USD","value":1.13,"date":"2016-05-13"}
@@ -214,6 +213,13 @@ public class CurrencyExchangeController {
 
         exchangeRateRepository.delete(id);
     }//http://localhost:8080/deleteById?2
+
+    //for me
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    public Iterable<ExchangeRate> getAllExchangeRatesFromDB() {
+
+        return currencyExchangeService.getAllFromDB();
+    }//http://localhost:8080/getAll
 
 
 }
